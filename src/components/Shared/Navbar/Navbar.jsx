@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="navbar bg-base-100 my-8">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} className="btn lg:hidden">
+            <div tabIndex={0} className="m-4 lg:hidden">
               {isOpen ? (
                 <RxCross2 onClick={() => setIsOpen(false)} />
               ) : (
@@ -41,7 +41,9 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-[#444444] font-semibold text-lg"
+              className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100  w-52 text-[#444444] font-semibold text-lg ${
+                isOpen ? "-translate-x-2" : "-translate-x-56"
+              }`}
             >
               {navItems}
             </ul>
