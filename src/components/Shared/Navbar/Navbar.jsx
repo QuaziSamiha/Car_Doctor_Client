@@ -29,7 +29,7 @@ const Navbar = () => {
   );
   return (
     <>
-      <div className="navbar bg-base-100 my-8">
+      <div className="navbar bg-base-100 my-6 h-28">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} className="m-4 lg:hidden">
