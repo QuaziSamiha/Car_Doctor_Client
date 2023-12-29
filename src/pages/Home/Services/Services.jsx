@@ -10,7 +10,7 @@ const Services = () => {
         setServices(data);
       });
   }, []);
-//   console.log(services);
+  //   console.log(services);
   return (
     <section className="my-24">
       <div className="text-center">
@@ -26,6 +26,11 @@ const Services = () => {
         {services.map((service) => (
           <ServiceCard key={service._id} service={service} />
         ))}
+      </div>
+      <div className="flex justify-center items-center my-8">
+        <button className="w-[170px] h-[56px] text-lg font-semibold border border-[#ff3811] text-[#ff3811] rounded">
+          More Services
+        </button>
       </div>
     </section>
   );
