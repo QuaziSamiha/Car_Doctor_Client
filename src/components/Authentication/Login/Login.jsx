@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import loginImg from "../../../assets/images/login/login.svg";
 const Login = () => {
   const handleLogin = (event) => {
@@ -19,6 +20,7 @@ const Login = () => {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="email"
                   className="input input-bordered"
                   required
@@ -30,6 +32,7 @@ const Login = () => {
                 </label>
                 <input
                   type="password"
+                  name="password"
                   placeholder="password"
                   className="input input-bordered"
                   required
@@ -44,6 +47,7 @@ const Login = () => {
                 <input type="submit" value="login" className="btn" />
               </div>
             </form>
+            <p>New to Car Doctor? <Link to='/registration'>Registration</Link></p>
           </div>
         </div>
       </div>
