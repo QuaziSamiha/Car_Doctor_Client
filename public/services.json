@@ -1,6 +1,5 @@
 [
     {
-        "_id": "635a0c0b64a6d231228942ae",
         "service_id": "04",
         "title": "Engine Oil Change",
         "img": "https://i.ibb.co/T2cpBd5/888.jpg",
@@ -26,7 +25,6 @@
         ]
     },
     {
-        "_id": "635a0c0b64a6d231228942af",
         "service_id": "05",
         "title": "Battery Charge",
         "img": "https://i.ibb.co/ydCbDN3/5555.jpg",
