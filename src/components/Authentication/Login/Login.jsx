@@ -1,8 +1,22 @@
 import { Link } from "react-router-dom";
 import loginImg from "../../../assets/images/login/login.svg";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
 const Login = () => {
+  const { user, userLogin } = useContext(AuthContext);
   const handleLogin = (event) => {
     event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    // console.log(email, password);
+    userLogin(email, password)
+      .then((result) => {
+        console.log(result.user.email);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div>
@@ -44,10 +58,12 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <input type="submit" value="login" className="btn" />
+                <input type="submit" value="Login" className="btn text-white text-lg bg-[#ff3811]" />
               </div>
             </form>
-            <p>New to Car Doctor? <Link to='/registration'>Registration</Link></p>
+            <p className="mb-3 text-sm text-center">
+              New to Car Doctor? <Link to="/auth/registration" className="text-[#ff3811]">Registration</Link>
+            </p>
           </div>
         </div>
       </div>

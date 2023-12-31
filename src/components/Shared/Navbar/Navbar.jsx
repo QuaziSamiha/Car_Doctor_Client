@@ -11,7 +11,7 @@ const Navbar = () => {
   const navItems = (
     <>
       <li>
-        <Link>Home</Link>
+        <Link to='/'>Home</Link>
       </li>
       <li>
         <Link>About</Link>
@@ -60,9 +60,11 @@ const Navbar = () => {
             <BsHandbag className="h-6 ml-2 mr-1" />
             <RxMagnifyingGlass className="h-6 ml-1 mr-2" />
           </div>
-          <button className="btn btn-outline font-semibold text-lg border-[#FF3811] text-[#FF3811] hover:bg-white hover:text-[#FF3811] hover:border-[#FF3811]">
-            Appointment
-          </button>
+          <Link to='/auth/login'>
+            <button className="btn btn-outline font-semibold text-lg border-[#FF3811] text-[#FF3811] hover:bg-white hover:text-[#FF3811] hover:border-[#FF3811]">
+              Appointment
+            </button>
+          </Link>
         </div>
       </div>
     </>
