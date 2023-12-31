@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const ServiceCard = ({ service }) => {
   //   console.log(service);
-  const { title, img, price } = service;
+  const { _id, title, img, price } = service;
 
   return (
     <div className="w-[364px] h-[348px] border rounded">
@@ -13,9 +14,11 @@ const ServiceCard = ({ service }) => {
         <h1 className="font-bold text-2xl text-[#727272]">{title}</h1>
         <div className="text-[#ff3811] my-3 flex justify-between">
           <p className="text-xl font-semibold">Price: ${price}</p>
-          <button>
-            <FaArrowRight />
-          </button>
+          <Link to={`/checkout/${_id}`}>
+            <button>
+              <FaArrowRight />
+            </button>
+          </Link>
         </div>
       </div>
     </div>
