@@ -4,36 +4,44 @@ import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 
 const CheckOut = () => {
   const service = useLoaderData();
-  console.log(service);
-  const { _id, title, price, img } = service;
   const { user } = useContext(AuthContext);
+  console.log(service);
+  if(!service){
+    return <p>loading.....</p>
+  }
+  // const {  _id, title, price, img } = service;
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
     const date = form.date.value;
     const email = user?.email;
-    const order = {
-      customerName: name,
-      email, // short form
-      date,
-      img,
-      service: title,
-      service_id: _id,
-      price: price, // long form
-    };
+    // const order = {
+    //   customerName: name,
+    //   email, // short form
+    //   date,
+    //   img,
+    //   service: title,
+    //   service_id: _id,
+    //   price: price, // long form
+    // };
 
-    console.log(order);
+    // console.log(order);
 
-    fetch("http://localhost:5000/checkouts", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(order),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+    // fetch("http://localhost:5000/checkouts", {
+    //   method: "POST",
+    //   headers: {
+    //     "content-type": "application/json",
+    //   },
+    //   body: JSON.stringify(order),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     console.log(data);
+    //     if (data.insertedId) {
+    //       alert("data inserted successfully");
+    //     }
+    //   });
   };
   return (
     <div>
