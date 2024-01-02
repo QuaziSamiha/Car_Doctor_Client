@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 import BookingRows from "./BookingRows";
-
+import banner from "../../assets/images/others/allOrder.png";
 const Bookings = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
@@ -53,25 +53,18 @@ const Bookings = () => {
 
   return (
     <div>
-      Bookings
-      <h1>{bookings.length}</h1>
-      <div className="overflow-x-auto">
+      <div className="h-[319px] left-0 right-0 top-1/2 bg-gradient-to-br from-[#151515] to-[rgba(21, 21, 21, 0)] rounded-md">
+        <img src={banner} alt="" />
+        <div className="h-[71px]">
+          <h1 className="text-4xl text-white font-bold -mt-48 ml-24">
+            Cart Details
+          </h1>
+          <p className="text-[#ff3811] ml-24 mt-3">Home - manage all orders</p>
+        </div>
+      </div>
+      <div className="overflow-x-auto my-16 w-[1140px]">
         <table className="table">
-          {/* head */}
-          <thead>
-            <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
+          <tbody className="">
             {bookings.map((booking) => (
               <BookingRows
                 key={booking._id}
@@ -81,16 +74,6 @@ const Bookings = () => {
               />
             ))}
           </tbody>
-          {/* foot */}
-          {/* <tfoot>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-              <th></th>
-            </tr>
-          </tfoot> */}
         </table>
       </div>
     </div>

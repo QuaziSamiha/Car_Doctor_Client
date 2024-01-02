@@ -1,5 +1,5 @@
+import demo from '../../assets/images/team/1.jpg'
 const BookingRows = ({ booking, handleDelete, handleBookingConfirm }) => {
-  // eslint-disable-next-line no-unused-vars
   const { _id, customerName, date, email, service, price, img } = booking;
 
   //   const handleDelete = (id) => {
@@ -18,7 +18,7 @@ const BookingRows = ({ booking, handleDelete, handleBookingConfirm }) => {
   //     }
   //   };
   return (
-    <tr>
+    <tr className="h-[130px] flex justify-between items-center">
       <th>
         <button onClick={() => handleDelete(_id)} className="btn btn-circle">
           <svg
@@ -39,32 +39,28 @@ const BookingRows = ({ booking, handleDelete, handleBookingConfirm }) => {
       </th>
       <td>
         <div className="flex items-center gap-3">
-          <div className="avatar">
-            <div className="mask mask-squircle w-12 h-12">
-              <img
-                src="/tailwind-css-component-profile-2@56w.png"
-                alt="Avatar Tailwind CSS Component"
-              />
+          <div className="">
+            <div className="">
+              <img src={demo} className="h-[130px] w-[130px] rounded-md" alt="" />
             </div>
           </div>
           <div>
-            <div className="font-bold">Hart Hagerty</div>
-            <div className="text-sm opacity-50">United States</div>
+            <h1 className="font-semibold text-xl text-[#2c2c2c] mb-2">
+              {service}
+            </h1>
+            <p className="text-base mb-2">{customerName}</p>
+            <p className="text-base">{email}</p>
           </div>
         </div>
       </td>
-      <td>
-        Zemlak, Daniel and Leannon
-        <br />
-        <span className="badge badge-ghost badge-sm">
-          Desktop Support Technician
-        </span>
+      <td className="text-xl font-medium leading-6 text-[#2d2d2d]">
+        <p>${price}</p>
       </td>
-      <td>Purple</td>
+      <td className="text-xl font-medium leading-6 text-[#2d2d2d]">{date}</td>
       <th>
         <button
           onClick={() => handleBookingConfirm(_id)}
-          className="btn btn-ghost btn-xs"
+          className="btn h-12 w-[120px] bg-[#ff3811] hover:bg-[#ff3811] text-xl font-semibold text-white hover:text-white"
         >
           Confirm
         </button>
