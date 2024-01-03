@@ -7,6 +7,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
+  // eslint-disable-next-line no-unused-vars
   const { user, userLogin } = useContext(AuthContext);
   const handleLogin = (event) => {
     event.preventDefault();
@@ -34,7 +35,7 @@ const Login = () => {
               <h1 className="text-4xl text-center text-[#2c2c2c] font-semibold">
                 Login
               </h1>
-              <form onSubmit={handleLogin} className="card-body">
+              <form onSubmit={handleLogin} className="my-4">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text font-semibold text-lg text-[#2c2c2c]">
