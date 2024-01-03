@@ -1,5 +1,6 @@
 import demo from '../../assets/images/team/1.jpg'
 const BookingRows = ({ booking, handleDelete, handleBookingConfirm }) => {
+  // eslint-disable-next-line no-unused-vars
   const { _id, customerName, date, email, service, price, img } = booking;
 
   //   const handleDelete = (id) => {
